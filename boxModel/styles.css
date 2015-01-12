@@ -1,0 +1,22 @@
+* {
+  border: 1px dotted red;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+section, aside {
+  display:inline-block;
+  vertical-align: top;
+}
+
+section {
+  width: 24%;
+}
+
+aside {
+  width: 25%;
+}
