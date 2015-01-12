@@ -1,0 +1,33 @@
+header, footer {
+  background: red;
+  min-height: 250px;
+}
+
+section {
+  background: blue;
+  min-height: 450px;
+}
+
+@media screen and (min-width:450px) and (max-width: 550px) {
+
+  header, footer {
+    background: blue;
+    min-height: 450px;
+
+  }
+  header {
+    color: green;
+  }
+  footer {
+    color: white;
+  }
+  section {
+    color: chartreuse;
+  }
+
+  section {
+    background: red;
+    min-height: 250px;
+  }
+
+}
