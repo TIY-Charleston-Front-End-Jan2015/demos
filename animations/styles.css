@@ -1,0 +1,32 @@
+.blocks li {
+  padding:10px;
+  background:#E67E22;
+  display:inline-block;
+
+}
+.blocks a {
+  text-decoration:none;
+  color:white;
+}
+.blocks li:hover {
+  -webkit-animation: backgroundColors .5s infinite;
+  -webkit-transform: scale(1.5);
+}
+.text > span {
+  font-family: Helvetica, sans-serif;
+  font-weight:bold;
+  font-size: 1.75em;
+  color: #E74C3C;
+  background:#000;
+  display:inline-block;
+  padding:10px;
+}
+.text > span:hover {
+  -webkit-transform: scale(1.5);
+}
+@-webkit-keyframes backgroundColors {
+  0% { background: #1ABC9C; }
+  30% { background: #2ECC71 ; }
+  60% { background: #3498DB ; }
+  100% { background: #9B59B6 ; }
+}
