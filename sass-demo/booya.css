@@ -1,0 +1,11 @@
+.box {
+  background-color: #ff0000;
+  padding: 12px;
+  margin: 5px;
+  display: inline-block; }
+
+h1 {
+  color: #ff0000; }
+
+#page p {
+  color: #ff0000; }

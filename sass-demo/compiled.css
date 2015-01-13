@@ -1,0 +1,48 @@
+.notify {
+  border-radius: 20px;
+  display: block;
+  border: 1px solid black; }
+  .notify.warning {
+    border: 5px solid orange; }
+  .notify.danger {
+    border: 5px solid red; }
+  .notify.success {
+    border: 5px solid green; }
+
+#page {
+  background-color: #505050;
+  color: white; }
+  #page .highlight {
+    background-color: yellow; }
+  #page p {
+    font-size: 2em; }
+    #page p a {
+      color: white;
+      text-decoration: none; }
+      #page p a span {
+        border: 5px dotted green; }
+
+.left-col, .right-col {
+  float: left; }
+
+.left-col {
+  width: 66%; }
+
+.right-col {
+  width: 34%; }
+
+.box {
+  background-color: #ff0000;
+  padding: 12px;
+  margin: 5px;
+  display: inline-block; }
+
+h1 {
+  color: #ff0000; }
+
+#page p {
+  color: #ff0000; }
+
+  .notify.default {
+    border: 5px solid black;
+  }
