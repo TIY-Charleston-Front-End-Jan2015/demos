@@ -1,0 +1,13 @@
+.notify, .warning, .danger, .success {
+  border-radius: 20px;
+  display: block;
+  border: 1px solid black; }
+
+.warning {
+  border: 5px solid orange; }
+
+.danger {
+  border: 5px solid red; }
+
+.success {
+  border: 5px solid green; }

@@ -1,0 +1,137 @@
+/* mixins */
+
+$aColor: #000fff;
+$bColor: #fff000;
+
+@mixin linear($color1, $color2) {
+  background: linear-gradient($color1, $color2);
+}
+
+
+@mixin postBg($color1, $color2, $imgPath) {
+  display: inline-block;
+  @include linear($color1, $color2);
+  background-image:$imgPath;
+}
+
+.post1 {
+ @include postBg($aColor, $bColor,'somepath/image.png');
+}
+.post2 {
+
+  /* @include postBg('somepath/image1.png'); */
+
+}
+.post3 {
+
+  /* @include postBg('somepath/image2.png'); */
+
+}
+/* .post4 {
+
+  @include postBg('somepath/image3.png');
+
+} */
+
+/* .post5 {
+  @include postBg('somepath/image4.png');
+} */
+
+
+@mixin border-radius($radius: 5%) {
+
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+
+}
+
+// DRY - Don't repeat yourself
+
+@mixin boxy ($display: inline-block, $radius: 20%, $width: 100%) {
+  display:$display;
+  border-radius: $radius;
+  width: $width;
+  background-color: red;
+}
+.boxy {
+  @include boxy();
+}
+
+.sideBarWidget {
+  @include boxy(inline-block,100%, 90%);
+  font-family: 'Helvetica', sans-serif;
+}
+
+@mixin box($blue-color: #ff0000) {
+  background-color: $blue-color;
+  padding: 12px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.menu {
+  @include box();
+}
+
+.sidePics {
+  display:inline-block;
+  @include border-radius(100%);
+  border: 5px solid purple;
+}
+.profile {
+  @extend .sidePics;
+  @include border-radius(100%);
+
+}
+#page {
+  background-color: $page-bg;
+  color: white;
+
+  .highlight {
+    background-color: yellow;
+  }
+  p {
+    a {
+      span {
+        border:5px dotted green;
+      }
+      color: white; text-decoration: none;
+    }
+    font-size:2em;
+  }
+
+}
+
+a {
+  text-decoration: line-through;
+}
+
+
+
+
+.left-col, .right-col {
+  float:left;
+}
+
+.left-col {
+  width: $left-column;
+}
+.right-col {
+  width: $right-column;
+}
+
+.box {
+  background-color: $blue-color;
+  padding: 12px;
+  margin: 5px;
+  display: inline-block;
+}
+
+h1 {
+  color: $blue-color;
+}
+
+#page p {
+  color: $blue-color;
+}

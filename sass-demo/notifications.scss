@@ -2,16 +2,18 @@
   border-radius: 20px;
   display:block;
   border: 1px solid black;
-
-  &.warning {
+}
+.warning {
+  @extend .notify;
     border: 5px solid orange;
   }
 
-  &.danger {
+.danger {
+  @extend .notify;
     border: 5px solid red;
   }
 
-  &.success {
+.success {
+  @extend .notify;
     border: 5px solid green;
   }
-}
