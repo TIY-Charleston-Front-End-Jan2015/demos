@@ -41,18 +41,24 @@ $(document).ready(function() {
   //
   // });
 
-
+// This is a more DRY version of the code above
    $("nav a").click(function (event) {
      event.preventDefault();
 
-     var relatedClass = "." + $(this).attr('rel');  // .post1 or .post2 or .post3
+     console.log("this is href: ", $(this).attr("href"));
 
+     var relatedClass = "." + $(this).attr('rel');  // .post1 or .post2 or .post3
+     // changing activeNav class to my nav menu item
        $(this).closest("li").siblings().removeClass("activeNav");
        $(this).closest("li").addClass("activeNav");
+
+
        $(relatedClass).siblings().removeClass("active");
        $(relatedClass).addClass('active');
 
      console.log(relatedClass);
+
+
 
 
    });
