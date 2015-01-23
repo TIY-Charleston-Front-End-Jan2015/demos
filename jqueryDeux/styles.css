@@ -1,0 +1,8 @@
+.box {
+  display: inline-block;
+  background: red;
+  min-width: 200px;
+  min-height: 200px;
+  transition: all .5s ease;
+  cursor: pointer;
+}
