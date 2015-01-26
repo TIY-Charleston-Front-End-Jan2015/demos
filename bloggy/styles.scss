@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+nav {
+  background: black;
+  width:100%;
+
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type:none;
+}
+nav li {
+  display:inline-block;
+  margin-left:10px;
+}
+
+nav a {
+
+  display:block;
+  padding:15px;
+  color: white;
+
+}
+
+nav li:hover {
+  background: white;
+}
+nav li:hover a {
+  color: black;
+}
+
+article, .box {
+  padding:20px;
+}
+
+section, aside {
+  display:inline-block;
+  vertical-align: top;
+
+}
+
+section {
+  width: 70%;
+}
+aside {
+  width: 28%;
+}
