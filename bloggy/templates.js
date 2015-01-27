@@ -7,9 +7,6 @@ templates.post = [
   "<p>- <%= author %></p>",
   "<p><button class='deletePost'>Delete</button></p>",
   "<img src='<%= photo %>'>",
-  "<form action=''>",
-  "<input type='text' value='<%= title %>'>",
-
   "</article>"
 
 ].join("");
