@@ -21,13 +21,12 @@ var blogPage = {
         title: $('.box input[name="title"]').val(),// title goes here
         content: $('.box textarea[name="content"]').val(), // content goes here
         author: $('.box input[name="author"]').val() ,// author goes here
+        photo: $('.box input[name="photo"]').val(),
         isPublished: true
       };
 
       posts.push(newPost);
-
-
-      blogPage.renderPost(newPost, posts.indexOf(newPost));
+      blogPage.renderAllPosts(posts);
 
       $('.box input').val('');
       $('.box textarea').val('');
@@ -42,21 +41,24 @@ var blogPage = {
 
       console.log(postIndex);
       posts.splice(postIndex, 1);
+      blogPage.renderAllPosts(posts);
 
-      $(this).closest('article').remove();
+
     },
-    renderPost: function (post, index, array) {
-      post.idx = index;
-      var compiled = _.template(templates.post);
-
-      // console.log(compiled(post));
-
-      $("section").prepend(compiled(post));
-
+    compileTmpl: function (data, tmpl) {
+      var tmpl = _.template(tmpl);
+      return tmpl(data);
     },
     renderAllPosts: function (allPosts) {
+      var tmplStr = ""
+      var compiledTmpl = _.template(templates.post);
 
-      _.each(allPosts, blogPage.renderPost)
+          _.each(allPosts, function (item, index, arr) {
+            item.idx = index;
+            tmplStr += compiledTmpl(item);
+          });
+
+      $("section").html(tmplStr);
     }
   };
 
