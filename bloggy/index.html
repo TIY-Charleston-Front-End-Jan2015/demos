@@ -4,6 +4,22 @@
   <meta charset="UTF-8">
   <title>My Blog</title>
   <link rel="stylesheet" href="styles.css">
+<script id="postTmpl" type="html/template">
+  <article data-index='<%= idx %>'>
+  <h3><%= title %></h3>
+  <p><%= content %></p>
+  <p>- <%= author %></p>
+  <p><button class='deletePost'>Delete</button><button class="showEditForm">Edit</button></p>
+  <img src='<%= photo %>'>
+  <div class="form">
+    <p><input type="text" class="editTitle" value="<%= title %>"></p>
+    <p><input type="text" class="editContent" value="<%= content %>"></p>
+    <p><input type="text" class="editAuthor" value="<%= author %>"></p>
+    <p><input type="text" class="editPhoto" value="<%= photo %>"></p>
+    <button class="editWholePost">Edit Form</button>
+   </div>
+  </article>
+</script>
 </head>
 <body>
 <header>
@@ -39,9 +55,12 @@
     </p>
     <p>
     <button type="submit">Submit Post</button>
+
     </p>
 
+
     </form>
+    <p><button class="updatePost">Update Post</button></p>
   </div>
   <div class="box">
     <ul>

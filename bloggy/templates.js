@@ -5,7 +5,7 @@ templates.post = [
   "<h3><%= title %></h3>",
   "<p><%= content %></p>",
   "<p>- <%= author %></p>",
-  "<p><button class='deletePost'>Delete</button></p>",
+  "<p><button class='deletePost'>Delete</button> <button</p>",
   "<img src='<%= photo %>'>",
   "</article>"
 

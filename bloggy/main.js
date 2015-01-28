@@ -13,7 +13,14 @@ var blogPage = {
         blogPage.createPost();
       });
 
+      $("section").on('click', '.showEditForm', function (event) {
+        $(this).closest('article').find('.form').toggleClass('active');
+      });
+
       $('section').on('click', '.deletePost', blogPage.deletePost);
+
+      // update post
+      $('section').on('click', '.editWholePost', blogPage.updatePost);
 
     },
     createPost: function () {
@@ -34,6 +41,19 @@ var blogPage = {
     },
     updatePost: function () {
 
+      var thisIndex = $(this).closest('article').data('index');
+
+      var updatedPost = {
+        title: $(this).closest('article').find('input.editTitle').val(),
+        content: $(this).closest('article').find('input.editContent').val(),
+        author: $(this).closest('article').find('input.editAuthor').val(),
+        photo: $(this).closest('article').find('input.editPhoto').val(),
+        isPublished: true
+      };
+
+      posts.splice(thisIndex, 1, updatedPost);
+      blogPage.renderAllPosts(posts);
+
     },
     deletePost: function (event) {
 
@@ -50,12 +70,13 @@ var blogPage = {
       return tmpl(data);
     },
     renderAllPosts: function (allPosts) {
-      var tmplStr = ""
-      var compiledTmpl = _.template(templates.post);
+      var tmplStr = "";
+      var compiledTmpl = _.template($("#postTmpl").html());
 
-          _.each(allPosts, function (item, index, arr) {
-            item.idx = index;
-            tmplStr += compiledTmpl(item);
+          _.each(allPosts, function (post, index, arr) {
+            post.idx = index;
+            tmplStr += compiledTmpl(post);
+
           });
 
       $("section").html(tmplStr);
