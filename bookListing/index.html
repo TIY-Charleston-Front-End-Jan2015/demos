@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Books!</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="styles.css">
+  <script type="html/template" id="bookTmpl">
+    <article data-bookid="<%= _id %>">
+      <img src="<%= bookCover %>" alt="">
+      <h3><%= title %></h3>
+      <h4><%= author %></h4>
+      <p><%= synopsis %></p>
+      <button class="deleteBook">Delete</button> | <button class="showEditBook">Edit</button>
+      <form class="editBook" action="">
+        <div class="form-group">
+          <input type="text" class="form-control" name="editTitle" value="<%= title %>">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="editAuthor" value="<%= author %>">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="editBookCover" value="<%= bookCover %>">
+        </div>
+        <div class="form-group">
+          <textarea name="editSynopsis" class="form-control" id="" cols="30" rows="10">
+            <%= synopsis %>
+          </textarea>
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary">Edit Book</button>
+      </form>
+    </article>
+
+  </script>
+</head>
+<body>
+<header>
+  <div class="jumbotron">
+    <h1>My Books!</h1>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <section class="col-md-8">
+
+    <article>
+      <img src="http://placehold.it/200/400" alt="">
+      <h3>Book Title</h3>
+      <p>Synopsis Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem corporis autem dolorum debitis obcaecati laboriosam perspiciatis expedita ea consequatur cupiditate eos fugit voluptatem provident repellat omnis commodi dolorem, fugiat suscipit.</p>
+    </article>
+    </section>
+    <aside class="col-md-4">
+      <form id="createBook" action="">
+        <div class="form-group">
+          <input type="text" class="form-control" name="newTitle">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="newAuthor">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="newBookCover">
+        </div>
+        <div class="form-group">
+          <textarea name="newSynopsis" class="form-control" id="" cols="30" rows="10"></textarea>
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary">Add Book</button>
+      </form>
+    </aside>
+  </div>
+</div>
+<footer></footer>
+
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+<script src="main.js"></script>
+</body>
+</html>
