@@ -9,6 +9,11 @@ var books = {
   init: function () {
     books.initStyling();
     books.initEvents();
+    setInterval(function() {
+      console.log("hi everyone!");
+    }, 1000);
+
+
 
   },
   initStyling: function () {
@@ -57,7 +62,7 @@ var books = {
 
   },
   config: {
-    url: 'http://tiy-fee-rest.herokuapp.com/collections/sally',
+    url: 'http://tiy-fee-rest.herokuapp.com/collections/spacejam',
 
   },
   render: function (data, tmpl, $el) {
@@ -92,7 +97,9 @@ var books = {
       type: 'POST',
       success: function (data) {
         console.log(data);
-        books.renderBooks();
+        var userInfo = JSON.stringify(data);
+        localStorage.setItem('userInfo', userInfo);
+        // books.renderBooks();
       },
       error: function (err) {
         console.log(err);
@@ -107,7 +114,7 @@ var books = {
       type: 'DELETE',
       success: function (data) {
         console.log(data);
-        books.renderBooks();
+        // books.renderBooks();
       },
       error: function (err) {
         console.log(err);
