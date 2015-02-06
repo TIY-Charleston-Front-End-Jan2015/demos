@@ -3,74 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <title>My Blog</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="styles.css">
 <script id="postTmpl" type="html/template">
-  <article data-index='<%= idx %>'>
-  <h3><%= title %></h3>
-  <p><%= content %></p>
-  <p>- <%= author %></p>
+<% _.each(posts, function(currentElement, index, array) { %>
+  <article data-index='<%= index %>'>
+  <h3><%= currentElement.title %></h3>
+  <p class="smallText"><%= currentElement.content %></p>
+  <p>- <%= currentElement.author %></p>
   <p><button class='deletePost'>Delete</button><button class="showEditForm">Edit</button></p>
-  <img src='<%= photo %>'>
+  <img src='<%= currentElement.photo %>'>
   <div class="form">
-    <p><input type="text" class="editTitle" value="<%= title %>"></p>
-    <p><input type="text" class="editContent" value="<%= content %>"></p>
-    <p><input type="text" class="editAuthor" value="<%= author %>"></p>
-    <p><input type="text" class="editPhoto" value="<%= photo %>"></p>
+    <div><input type="text" class="editTitle" value="<%= currentElement.title %>"></div>
+    <div><input type="text" class="editContent" value="<%= currentElement.content %>"></div>
+    <div><input type="text" class="editAuthor" value="<%= currentElement.author %>"></div>
+    <div><input type="text" class="editPhoto" value="<%= currentElement.photo %>"></div>
     <button class="editWholePost">Edit Form</button>
    </div>
   </article>
+
+<% }); %>
+</script>
+<script id="anotherTemplate" type="html/template">
+
+  <h2><%= name %></h2>
+
+
 </script>
 </head>
 <body>
 <header>
-  <nav>
-    <ul>
-      <li><a href="">nav link</a></li>
-      <li><a href="">nav link</a></li>
-      <li><a href="">nav link</a></li>
-    </ul>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Bloggy</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
   </nav>
+
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Welcome to my blog!</h1>
+      <p>Come follow along with me! </p>
+      <p>Visit my Blog <button class="btn btn-grimace btn-lg">Blog</button></p>
+    </div>
+  </div>
 </header>
-<section>
-
-
-</section>
-<aside>
-  <div class="box">
-    <form action="">
-    <h4>  <label for="title">Title</label>
-      <input type="text" name="title" placeholder="Title">
-    </h4>
-    <p>
-      <label for="content">Blog Content</label>
-      <textarea id="content" cols="30" rows="10" name="content"></textarea>
-    </p>
-    <p>
-      <label for="author">Author</label>
-      <input type="text" name="author" placeholder="Author">
-    </p>
-    <p>
-      <label for="photo">Photo URL</label>
-      <input type="text" class="photo" name="photo">
-    </p>
-    <p>
-    <button type="submit">Submit Post</button>
-
-    </p>
-
-
-    </form>
-    <p><button class="updatePost">Update Post</button></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae iste quaerat molestias dolorem, deleniti aut? Ipsam tempore cupiditate, mollitia rem aperiam assumenda delectus asperiores quasi neque, doloremque quas, magni illo.</p>
+    </div>
+    <div class="col-md-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis rem eveniet nemo minima impedit officiis accusamus doloribus dicta tempora veniam dolor tempore modi assumenda labore sapiente aliquid placeat, reprehenderit laborum?</p>
+    </div>
+    <div class="col-md-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam consequuntur error sunt, cupiditate illo voluptatibus delectus voluptates velit eum. Numquam ipsum repellat est dolores aut suscipit earum, quaerat eos praesentium.</p>
+    </div>
   </div>
-  <div class="box">
-    <ul>
-      <li><a href="">blog title</a></li>
-    </ul>
+  <div class="row">
+    <div class="col-md-9">
+      <div class="mainContent">
+
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="box">
+        <form action="">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" placeholder="Title">
+          </div>
+
+
+          <div class="form-group">
+            <label for="content">Blog Content</label>
+            <textarea id="content" class="form-control" cols="30" rows="10" name="content"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" class="form-control" name="author" placeholder="Author">
+          </div>
+          <div class="form-group">
+            <label for="photo">Photo URL</label>
+            <input type="text"  class="photo form-control" name="photo">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success">Submit Post</button>
+
+          </div>
+
+
+        </form>
+      </div>
+      <div class="box">
+        <ul>
+          <li><a href="">blog title</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
-</aside>
+</div>
 <footer>
-  <nav>
-    <ul>
+  <nav class="navbar navbar-inverse">
+    <ul class="nav navbar">
       <li><a href="">nav link</a></li>
       <li><a href="">nav link</a></li>
       <li><a href="">nav link</a></li>
@@ -82,6 +160,7 @@
 <!-- libraries -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
 <!-- data to use -->
 <script src="reddit.js"></script>

@@ -44,3 +44,10 @@ aside {
 
 .active {
   display: block; }
+
+.btn-grimace {
+  color: #fff;
+  background-color: purple; }
+
+.container {
+  width: 90%; }

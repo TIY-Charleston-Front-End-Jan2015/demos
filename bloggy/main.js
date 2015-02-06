@@ -13,14 +13,14 @@ var blogPage = {
         blogPage.createPost();
       });
 
-      $("section").on('click', '.showEditForm', function (event) {
+      $(".mainContent").on('click', '.showEditForm', function (event) {
         $(this).closest('article').find('.form').toggleClass('active');
       });
 
-      $('section').on('click', '.deletePost', blogPage.deletePost);
+      $('.mainContent').on('click', '.deletePost', blogPage.deletePost);
 
       // update post
-      $('section').on('click', '.editWholePost', blogPage.updatePost);
+      $('.mainContent').on('click', '.editWholePost', blogPage.updatePost);
 
     },
     createPost: function () {
@@ -31,6 +31,7 @@ var blogPage = {
         photo: $('.box input[name="photo"]').val(),
         isPublished: true
       };
+
 
       posts.push(newPost);
       blogPage.renderAllPosts(posts);
@@ -70,16 +71,18 @@ var blogPage = {
       return tmpl(data);
     },
     renderAllPosts: function (allPosts) {
-      var tmplStr = "";
+      // var tmplStr = "";
       var compiledTmpl = _.template($("#postTmpl").html());
 
-          _.each(allPosts, function (post, index, arr) {
-            post.idx = index;
-            tmplStr += compiledTmpl(post);
+      var markup = compiledTmpl(allPosts);
+      console.log(markup);
+          // _.each(allPosts, function (post, index, arr) {
+          //   post.idx = index;
+          //   tmplStr += compiledTmpl(post);
+          //
+          // });
 
-          });
-
-      $("section").html(tmplStr);
+      $(".mainContent").html(markup);
     }
   };
 
