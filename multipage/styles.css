@@ -65,3 +65,7 @@ article {
 .activeNav a {
   color: black;
 }
+
+img {
+  border: 5px dotted red;
+}
