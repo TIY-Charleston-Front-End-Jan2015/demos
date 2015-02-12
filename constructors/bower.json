@@ -1,0 +1,19 @@
+{
+  "name": "constructors",
+  "version": "0.0.0",
+  "homepage": "https://github.com/TIY-Charleston-Front-End-Jan2015/demos",
+  "authors": [
+    "Calvin Webster <calweb@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3"
+  }
+}
