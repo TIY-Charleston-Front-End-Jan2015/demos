@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Backbone Views</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/template" id="postTmpl">
+
+      <h2><%= title %></h2>
+      <p><%= content %></p>
+      <blockquote><%= author %></blockquote>
+      <button class="deletePost">Delete</button>
+      <hr>
+
+  </script>
+</head>
+<body>
+<section>
+  <h1>This is where posts go.</h1> <button class="showCreate">Add Post</button>
+  <form action="" id="createPost">
+    <p><input type="text" name="newTitle" placeholder="Title"></p>
+    <p><textarea name="newContent" id="" cols="30" rows="10" placeholder="Post Content"></textarea></p>
+    <p><input type="text" name="newAuthor" placeholder="Author"></p>
+    <p><button type="submit">Create New Post</button></p>
+  </form>
+
+
+</section>
+<aside>
+<div class="box">
+  <h3>This is the sidebar</h3>
+</div>
+</aside>
+
+
+
+
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/backbone/backbone.js"></script>
+
+<!-- app files -->
+<script src="models.js"></script>
+<script src="collections.js"></script>
+<script src="views.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
