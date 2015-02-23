@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SubViews</title>
+  <script type="text/x-template" id="footTmpl">
+  <h3>Footer</h3>
+    <nav>
+      <ul>
+        <li><a href="">nav link</a></li>
+        <li><a href="">nav link</a></li>
+        <li><a href="">nav link</a></li>
+      </ul>
+    </nav>
+  </script>
+  <script type="text/x-template" id="headTmpl">
+  <h3>Header</h3>
+  <nav>
+    <ul>
+      <li><a href="#bookDetail">Book Detail</a></li>
+      <li><a href="#poop">Another View</a></li>
+      <li><a href="">nav link</a></li>
+    </ul>
+  </nav>
+  </script>
+  <script type="text/x-template" id="bookTmpl">
+    <h3><%= title %></h3>
+    <p><%= synopsis %></p>
+  </script>
+</head>
+<body>
+  <div id="layout">
+      <div id="header"></div>
+      <div id="container">
+      </div>
+      <div id="footer"></div>
+  </div>
+<script>
+  var books = [
+    {
+      title: 'book 1',
+      synopsis: 'this is a really good book'
+    },
+    {
+      title: 'book 2',
+      synopsis: 'this is a really good book'
+    }
+  ];
+</script>
+<!-- vendor:js -->
+<script src="js/vendor/jquery/dist/jquery.js"></script>
+<script src="js/vendor/underscore/underscore.js"></script>
+<script src="js/vendor/backbone/backbone.js"></script>
+
+<!-- app:js -->
+<script src="js/model-collection.js"></script>
+<script src="js/views.js"></script>
+<script src="js/routes.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
