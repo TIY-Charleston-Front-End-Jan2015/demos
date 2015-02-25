@@ -1,7 +1,7 @@
 var LayoutView = Backbone.View.extend({
   el: $('#layout'),
   events: {
-    'click #footer': 'alertUser'
+    // 'click #footer': 'alertUser'
   },
   alertUser: function () {
     alert('some random stuff');
@@ -14,20 +14,17 @@ var LayoutView = Backbone.View.extend({
     this.$el.find('#footer').html(footView);
   },
   renderSubview: function (view) {
+    this.subView && this.subView.remove();
 
-    // if(!this.subView) {
       this.subView = view;
       this.$el.find('#container').html(this.subView.render().el);
-    // } else {
-    //   this.subView.remove();
-    //   this.renderSubview(view);
-    // }
+
   }
 });
 
   var HeaderView = Backbone.View.extend({
    tagName: 'header',
-   events: {'click nav': 'hellooo'},
+  //  events: {'click nav': 'hellooo'},
    template: _.template($('#headTmpl').html()),
    initialize: function () {
 
@@ -74,7 +71,7 @@ var BooksCollectionView = Backbone.View.extend({
 });
 var BookView = Backbone.View.extend({
   tagName: 'article',
-  
+
   template: _.template($('#bookTmpl').html()),
   initialize: function () {
 

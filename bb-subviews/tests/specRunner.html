@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+
+<div id="mocha"></div>
+
+
+<script src="../js/vendor/jquery/dist/jquery.js"></script>
+<script src="../js/vendor/underscore/underscore.js"></script>
+<script src="../js/vendor/backbone/backbone.js"></script>
+
+<script src="../node_modules/mocha/mocha.js"></script>
+<script>
+    mocha.setup('bdd');
+</script>
+<script src="../node_modules/chai/chai.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/sinon.js/1.7.3/sinon-min.js"></script>
+<script src="../node_modules/sinon-chai/lib/sinon-chai.js"></script>
+<script>
+    var expect = chai.expect;
+    chai.use(sinon-chai);
+</script>
+<!-- app files -->
+<script src="../js/model-collection.js"></script>
+<script src="../js/views.js"></script>
+
+<!-- tests to run -->
+<script src="spec/test.spec.js"></script>
+<script src="spec/bookModel.spec.js"></script>
+<script src="spec/bookCollection.spec.js"></script>
+<script src="spec/bookViews.spec.js"></script>
+
+<script>mocha.run()</script>
+
+</body>
+</html>
