@@ -1,8 +1,10 @@
 (function () {
   "use strict";
   angular.module('demoApp')
-    .controller('MainController', function (SuperHerosService, $scope) {
+    .controller('MainController', function (SuperHerosService) {
         var mainCtrl = this;
+
+        mainCtrl.newHero = {};
 
         mainCtrl.superheros = SuperHerosService.getHeros();
 
@@ -12,7 +14,7 @@
 
         mainCtrl.addSuperHero = function (newHero) {
           SuperHerosService.addHero(newHero);
-          $scope.newHero = {};
+          mainCtrl.newHero = {};
         };
 
     });
