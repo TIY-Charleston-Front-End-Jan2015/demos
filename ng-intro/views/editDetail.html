@@ -1,0 +1,14 @@
+<h2><input type="text" ng-model="mainCtrl.singleItem.name"></h2>
+<p><input type="text" ng-model="mainCtrl.singleItem.villian"></p>
+
+<button ng-click="mainCtrl.editItem(mainCtrl.singleItem)">Submit Edit</button>
+
+{{ $index }} - is index
+
+<!-- mainCtrl -->
+<div ng-controller="AdminController as admin">
+  <button ng-click="admin.deleteHero()">Delete</button>
+  {{mainCtrl.singleItem | json }}
+  <button ng-click="admin.sayHello()">Say hello</button>
+  <!-- admin, main -->
+</div>

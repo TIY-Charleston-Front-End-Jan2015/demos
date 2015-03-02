@@ -1,15 +1,20 @@
 
-  <ul>
+
+<button ng-click="showHero = !showHero">Show Heros</button>
+  <ul ng-hide="showHero">
     <li ng-repeat="hero in mainCtrl.superheros">
-        Name: {{hero.name}}, Villian: {{hero.villian}}
+
+      <a href="#/detail/{{$index}}">  Name: {{hero.name}}, Villian: {{hero.villian}}</a> - <a href="#/edit/{{$index}}">Edit</a> | <button ng-click="mainCtrl.deleteItem($index)">Delete</button>
     </li>
   </ul>
 
-
-
-<form ng-submit="mainCtrl.addSuperHero(newHero)">
-  <input type="text" ng-model="newHero.name" placeholder="Name">
-  <input type="text" ng-model="newHero.villian" placeholder="Villian">
+<button ng-click="showNewForm = !showNewForm" >Add New Hero</button>
+<form ng-show="showNewForm" ng-submit="mainCtrl.addSuperHero(mainCtrl.newHero)">
+  <input type="text" ng-model="mainCtrl.newHero.name" placeholder="Name">
+  <input type="text" ng-model="mainCtrl.newHero.villian" placeholder="Villian">
   <button type="submit">Add Hero</button>
 </form>
-<button ng-click="mainCtrl.alertMe()">Alert Me!!!</button>
+
+<input type="text" ng-model="userName">
+
+<button ng-click="mainCtrl.login(userName)">Login!!!</button>

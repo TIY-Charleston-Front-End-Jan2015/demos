@@ -10,15 +10,31 @@
         templateUrl: 'views/main.html',
         controller: 'MainController as mainCtrl'
       })
+      .when('/detail/:heroIndex', {
+        templateUrl: 'views/detail.html',
+        controller: 'MainController as mainCtrl'
+      } )
+      .when('/edit/:heroIndex', {
+        templateUrl: 'views/editDetail.html',
+        controller: 'MainController as mainCtrl'
+      })
+      .when('/admin', {
+        templateUrl: 'views/admin.html',
+        controller: 'AdminController as adminCtrl'
+      })
       .when('/tiy', {
         template: '<h1>{{hello}}</h1><input type="text" ng-model="hello">'
       })
       .when('/not-found', {
         templateUrl: 'views/404.html'
       })
-      .otherwise({
-        redirectTo: '/not-found'
-      });
+      .when('/something/:yo/:how/:are/:you', {
+        template: '<h1>yo</h1>',
+        controller: 'MainController as mainCtrl'
+      })
+      // .otherwise({
+      //   redirectTo: '/not-found'
+      // });
   });
 
 

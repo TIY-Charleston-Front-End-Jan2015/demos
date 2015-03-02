@@ -26,11 +26,28 @@
       };
       var addSuperHero = function (hero) {
         superHeros.push(hero);
+      };
+
+      var deleteSuperHero = function (index) {
+        // var idx = superHeros.indexOf(hero);
+        superHeros.splice(index, 1);
+        console.log(superHeros);
+      };
+
+      var getSingleHero = function (index) {
+        return superHeros[index];
+      };
+
+      var editHero = function (hero, index) {
+        superHeros[index] = hero;
       }
 
       return {
         getHeros: getSuperHeros,
-        addHero: addSuperHero
+        addHero: addSuperHero,
+        deleteHero: deleteSuperHero,
+        getHero: getSingleHero,
+        editHero: editHero
       };
     });
 
