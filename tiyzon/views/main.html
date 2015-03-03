@@ -1,0 +1,21 @@
+
+<h1>Customer View</h1>
+<section>
+  <div class="box" ng-repeat="product in main.products">
+    <img ng-src="{{product.photo}}" alt="{{product.title}}">
+    <h3>{{product.title}}</h3>
+    <p>{{product.description}}</p>
+    <div ng-controller="CartController as cart">
+      <button ng-click="cart.addItem(product)">Buy Now - {{product.price}}</button>
+    </div>
+
+  </div>
+</section>
+<aside ng-controller="CartController as cart">
+  <ul>
+    <li ng-repeat="item in cart.items">
+      {{item.title}} - {{ item.price | currency }} <a href="" ng-click="cart.removeItem(item)">[x]</a>
+    </li>
+  </ul>
+  <p>Total: {{cart.updateTotal() | currency }}</p>
+</aside>

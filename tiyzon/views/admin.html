@@ -1,0 +1,8 @@
+<h1>Admin View</h1> <a href="#/admin/new">Create New Product</a>
+<div class="box" ng-repeat="product in admin.products">
+  <img ng-src="{{product.photo}}" alt="{{product.title}}">
+  <h3>{{product.title}}</h3>
+  <p>{{product.description | limitTo: 100}}</p>
+  <p>{{product.price}}</p>
+  <p><a href="#/admin/detail/{{product._id}}">View More</a> | <a href="#/admin/edit/{{product._id}}">Edit</a> | <button ng-click="admin.deleteProduct(product._id)">Delete</button></p>
+</div>

@@ -1,0 +1,10 @@
+<h2>Edit: {{admin.singleProduct.title}}</h2>
+<div class="box">
+  <p><input type="text" ng-model="admin.singleProduct.photo"></p>
+  <h3><input type="text" ng-model="admin.singleProduct.title"></h3>
+  <p><textarea name="" ng-model="admin.singleProduct.description" id="" cols="30" rows="10">
+    {{admin.singleProduct.description}}
+  </textarea></p>
+  <p><input type="text" ng-model="admin.singleProduct.price"></p>
+  <button ng-click="admin.updateProduct(admin.singleProduct)">Update</button>
+</div>
