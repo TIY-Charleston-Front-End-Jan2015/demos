@@ -3,12 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Testing Directives</title>
-    <styles>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+       
+      }
       article {
         display: inline-block;
+        background: #fff;
         vertical-align: top;
+        padding:20px;
+        border-radius: 5px;
+        margin:5px;
+        -webkit-box-shadow: 3px 3px 5px 2px #ccc;
+        box-shadow:         3px 3px 5px 2px #ccc;
       }
-    </styles>
+      article img {
+        border-radius: 10px;
+        max-width: 200px;
+      }
+    </style>
 </head>
 <body ng-app="ngDirective">
   
