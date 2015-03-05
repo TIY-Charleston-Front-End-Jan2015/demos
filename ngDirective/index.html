@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing Directives</title>
+    <styles>
+      article {
+        display: inline-block;
+        vertical-align: top;
+      }
+    </styles>
+</head>
+<body ng-app="ngDirective">
+  
+  <ng-view></ng-view>
+  
+    <script src="bower_components/angular/angular.js"></script>  
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    
+    <script src="app.js"></script>
+    <script src="core/core.controller.js"></script>
+    <script src="core/core.service.js"></script>
+    <script src="core/core.directives.js"></script>
+</body>
+</html>
